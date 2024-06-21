@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Provider from "./components/Provider";
 
 
 
@@ -19,11 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Provider>
       <body className={cn('min-h-screen font-sans antialiased grainy')}>
         
         {children}
         
         </body>
+      </Provider> 
     </html>
   );
 }
