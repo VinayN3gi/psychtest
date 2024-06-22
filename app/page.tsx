@@ -10,7 +10,6 @@ import Navbar from './components/Navbar'
 const page = () => {
   return (
     <>
-    <Navbar/>
     <MaxWidthWrapper className=' mb-12 mt-14 sm:mt-30 justify-center items-center flex flex-col text-center'>
     <div className='mx-auto mb-4 max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border-gray-200  bg-white px-7 py-2 shadow-md  backdrop-blur transition-all hover:border-gray-300 hover:bg-white/30'>
          <p className=' text-sm font-semibold text-gray-700'>
@@ -71,7 +70,7 @@ const page = () => {
                   Sign up for an account 
                 </span>
                 <span className=' mt-2 text-zinc-700'>
-                  Either start out with a free plan or choose <Link href="/pricing" className=' text-blue-700 underline'>pro plan </Link>
+                  Create an account to get started with the <Link href="/testPage" className=' text-blue-900 hover:underline font-semibold'> test</Link>
                 </span>
               </div>
         </li>
