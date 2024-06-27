@@ -15,7 +15,7 @@ const Navbar = () => {
         <MaxWidthWrapper className=' md:p-0 sm:p-0'>
             <div className='flex h-14 justify-between items-center md:border-b border-zinc-200'>
                 <Link href='/dashboard' className=' z-40 font-semibold flex'>
-                AcadHelp
+                AcadMate
                 </Link>
               <div className='items-center sm:flex space-x-2 '>
                 <LoginLink className={buttonVariants({
@@ -26,9 +26,9 @@ const Navbar = () => {
                 <RegisterLink className={buttonVariants()}>
                   Sign Up
                 </RegisterLink>
-                <Button onClick={()=>router.push("/testPage")}>
-                  Take Test
-                </Button>
+               <Link href="/testPage" className={buttonVariants()}>
+                  Take Test        
+               </Link>
               </div>
             </div>
         </MaxWidthWrapper>

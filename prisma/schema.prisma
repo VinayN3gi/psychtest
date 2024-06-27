@@ -23,4 +23,23 @@ model User{
   stripePriceId String? @unique @map("stripe_price_id")
   stripeCurrentPeriodEnd DateTime? @map("stripe_current_period_end")
 
+  InterestInventory InterestInventory?
+}
+
+model InterestInventory{
+  answerId String @id @default(cuid())
+  answerOne String 
+  answerTwo String  
+  answerThree String 
+  answerFour String 
+  answerFive String 
+  answerSix String 
+  answerSeven String 
+  answerEight String 
+  answerNine String 
+  answerTen String 
+  answerEleven String 
+  answerTwelve String    
+  user User @relation(fields: [userId], references: [id])
+  userId String @unique
 }
