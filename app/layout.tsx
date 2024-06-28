@@ -4,7 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Provider from "./components/Provider";
 import Navbar from "./components/Navbar";
-
+import { Toaster } from "@/components/ui/toaster"
 
 
 
