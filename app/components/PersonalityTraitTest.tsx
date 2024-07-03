@@ -2,8 +2,23 @@
 import React, { useState } from 'react'
 import { MaxWidthWrapper } from './MaxWidthWrapper'
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Label } from "@/components/ui/label"
+import {
+   Dialog,
+   DialogClose,
+   DialogContent,
+   DialogDescription,
+   DialogFooter,
+   DialogHeader,
+   DialogTitle,
+   DialogTrigger,
+} from "@/components/ui/dialog"
+import { Loader2 } from 'lucide-react'
+import { trpc } from '../_trpc/client'
+import { useRouter } from 'next/navigation'
+
+ 
 
 
 const PersonalityTraitTest = () => {
@@ -21,6 +36,44 @@ const PersonalityTraitTest = () => {
   const [twelvethAnswer, setTwelvethAnswer] = useState<string>('')
    const [thirteenthAnswer, setThirteenthAnswer] = useState<string>('')
    const [fourteenthAnswer, setFourteenthAnswer] = useState<string>('')
+
+   const [isOpen, setIsOpen] = useState(false)  
+   const [next, setNext] = useState(false)
+
+   const router=useRouter()
+
+
+   const {mutate:createPersonalityRecord}=trpc.createPersonalityInventory.useMutation({
+      onSuccess:()=>{
+         router.push(`/testPage3`)
+      },
+      retry:true,
+      retryDelay:500,
+      })
+
+   const onSubmit=()=>{
+      if(!fifthAnswer || !fourthAnswer || !thirdAnswer || !secondAnswer || !firstAnswer || !sixthAnswer || !seventhAnswer || !eigthAnswer || !ninthAnswer || !tenthAnswer || !eleventhAnswer || !twelvethAnswer || !thirteenthAnswer || !fourteenthAnswer){
+      setIsOpen(true) 
+      return
+      }
+      setNext(true)
+      createPersonalityRecord({
+         answerOne:firstAnswer,
+         answerTwo:secondAnswer,
+         answerThree:thirdAnswer,
+         answerFour:fourthAnswer,
+         answerFive:fifthAnswer,
+         answerSix:sixthAnswer,
+         answerSeven:seventhAnswer,
+         answerEight:eigthAnswer,
+         answerNine:ninthAnswer,
+         answerTen:tenthAnswer,
+         answerEleven:eleventhAnswer,
+         answerTwelve:twelvethAnswer,
+         answerThirteen:thirteenthAnswer,
+         answerFourteen:fourteenthAnswer,     
+      })
+   }
 
 
 
@@ -445,30 +498,58 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-sixtysix" id="option-sixtysix"  onClick={()=>setThirteenthAnswer('A')}/>
+            <RadioGroupItem value="option-sixtysix" id="option-sixtysix"  onClick={()=>setFourteenthAnswer('A')}/>
             <Label htmlFor="option-sixtysix" className='  hover:text-red-700 hover:cursor-pointer'>Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-sixtyseven" id="option-sixtyseven"  onClick={()=>setThirteenthAnswer('B')}/>
+            <RadioGroupItem value="option-sixtyseven" id="option-sixtyseven"  onClick={()=>setFourteenthAnswer('B')}/>
             <Label htmlFor="option-sixtyseven" className='  hover:text-red-600/75 hover:cursor-pointer'>Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-sixtyeigth" id="option-sixtyeigth"  onClick={()=>setThirteenthAnswer('C')}/>
+            <RadioGroupItem value="option-sixtyeigth" id="option-sixtyeigth"  onClick={()=>setFourteenthAnswer('C')}/>
             <Label htmlFor="option-sixtyeigth" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-sixtynine" id="option-sixtynine"  onClick={()=>setThirteenthAnswer('D')}/>
+            <RadioGroupItem value="option-sixtynine" id="option-sixtynine"  onClick={()=>setFourteenthAnswer('D')}/>
             <Label htmlFor="option-sixtynine" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-seventy" id="option-seventy"  onClick={()=>setThirteenthAnswer('E')}/>
+            <RadioGroupItem value="option-seventy" id="option-seventy"  onClick={()=>setFourteenthAnswer('E')}/>
             <Label htmlFor="option-sixtyfive" className=' hover:text-green-700 hover:cursor-pointer'>Strongly Agree</Label>
             </div>
         </RadioGroup>
         </li>
-
         </ol>
+        <Button onClick={()=>onSubmit()} className=' w-full mt-5'>
+            {
+                next ? <div className=' flex flex-row gap-2'>
+                <Loader2 className=' h-6 w-6 animate-spin'/>
+               </div> : <div className=' flex flex-row gap-2'>
+                  <p>Next</p>
+               </div>
+            }
+        </Button>
     </div>
+
+    <Dialog open={isOpen}>
+      
+      <DialogContent className=' bg-white/50'>
+         <DialogHeader>
+            <DialogTitle className=' font-semibold text-lg'>You have not answered all the questions</DialogTitle>
+            <DialogDescription className=' text-md text-zinc-900'>
+              Please answer all the questions before submitting
+            </DialogDescription>
+         </DialogHeader>
+         <DialogFooter className="sm:justify-start">
+          <DialogClose asChild className=' mt-2'>
+            <Button type="button"  onClick={()=>setIsOpen(false)}>
+              Close
+            </Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+      </Dialog>
+
     </MaxWidthWrapper>
   )
 }

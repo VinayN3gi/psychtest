@@ -56,6 +56,41 @@ export const appRouter=router({
         }    
 
     }),
+
+    createPersonalityInventory:publicProcedure.input(z.object({
+        answerOne:z.string() || z.null(),
+        answerTwo:z.string() || z.null(),
+        answerThree:z.string() || z.null(),
+        answerFour:z.string() || z.null(),
+        answerFive:z.string() || z.null(),
+        answerSix:z.string() || z.null(),
+        answerSeven:z.string() || z.null(),
+        answerEight:z.string() || z.null(),
+        answerNine:z.string() || z.null(),
+        answerTen:z.string() || z.null(),
+        answerEleven:z.string() || z.null(),
+        answerTwelve:z.string() || z.null(),
+        answerThirteen:z.string() || z.null(),
+        answerFourteen:z.string() || z.null(),
+        
+    })).mutation(async ({input})=>{
+        const {getUser}=getKindeServerSession()
+        const user=await getUser()
+        if(!user || !user.id) throw new TRPCError({code:'UNAUTHORIZED',message:'Not logged in'})
+            
+        try {
+            const {answerOne,answerTwo,answerThree,answerFour,answerFive,answerSix,answerEight,answerNine,answerTen,answerEleven,answerSeven,answerTwelve,answerThirteen,answerFourteen}=input
+            const upload=await db.personalityInventory.create({data:{
+                answerOne,answerTwo,answerThree,answerFour,answerFive,answerSix,answerEight,answerNine,answerTen,answerEleven,answerSeven,answerTwelve,answerThirteen,answerFourteen,
+                userId:user.id,
+            }})
+            console.log('Created personality inventory',upload)
+            return upload
+        } catch (error) {
+            console.error('Failed to create personality inventory',error)
+            throw new TRPCError({code:'INTERNAL_SERVER_ERROR',message:'Failed to create personality inventory'})
+        }
+    })
 })
 
 export type AppRouter=typeof appRouter;

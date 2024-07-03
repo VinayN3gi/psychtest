@@ -24,6 +24,7 @@ model User{
   stripeCurrentPeriodEnd DateTime? @map("stripe_current_period_end")
 
   InterestInventory InterestInventory?
+  PersonalityInventory PersonalityInventory?
 }
 
 model InterestInventory{
@@ -40,6 +41,26 @@ model InterestInventory{
   answerTen String 
   answerEleven String 
   answerTwelve String    
+  user User @relation(fields: [userId], references: [id])
+  userId String @unique
+}
+
+model PersonalityInventory{
+  answerId String @id @default(cuid())
+  answerOne String 
+  answerTwo String  
+  answerThree String 
+  answerFour String 
+  answerFive String 
+  answerSix String 
+  answerSeven String 
+  answerEight String 
+  answerNine String 
+  answerTen String 
+  answerEleven String 
+  answerTwelve String    
+  answerThirteen String
+  answerFourteen String
   user User @relation(fields: [userId], references: [id])
   userId String @unique
 }
