@@ -4,6 +4,18 @@ import { MaxWidthWrapper } from './MaxWidthWrapper'
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Button } from '@/components/ui/button'
 import { Label } from "@/components/ui/label"
+import {
+   Dialog,
+   DialogClose,
+   DialogContent,
+   DialogDescription,
+   DialogFooter,
+   DialogHeader,
+   DialogTitle,
+} from "@/components/ui/dialog"
+import { Loader2 } from 'lucide-react'
+import { trpc } from '../_trpc/client'
+import { useRouter } from 'next/navigation'
 
 
 const SkillAssesment = () => {
@@ -19,6 +31,39 @@ const SkillAssesment = () => {
     const [tenthAnswer, setTenthAnswer] = useState<string>('')
     const [eleventhAnswer, setEleventhAnswer] = useState<string>('')
     const [twelvethAnswer, setTwelvethAnswer] = useState<string>('')
+    const [isOpen, setIsOpen] = useState<boolean>(false)
+    const [next, setNext] = useState<boolean>(false)  
+    const router=useRouter()  
+
+    const {mutate:createSkillAssesmentAnswer}=trpc.skillAssesmentAnswer.useMutation({
+         onSuccess:()=>{
+            router.replace("/testPage4")
+         },
+         retry:true,
+         retryDelay:500
+    })
+
+    const onSubmit=()=>{
+         if(!firstAnswer || !secondAnswer || !thirdAnswer || !fourthAnswer || !fifthAnswer || !sixthAnswer || !seventhAnswer || !eigthAnswer || !ninthAnswer || !tenthAnswer || !eleventhAnswer || !twelvethAnswer)
+         {
+               setIsOpen(true)
+               return
+         }
+         setNext(true)
+         createSkillAssesmentAnswer({
+            answerOne:firstAnswer,
+            answerTwo:secondAnswer,
+            answerThree:thirdAnswer,
+            answerFour:fourthAnswer,
+            answerFive:fifthAnswer,
+            answerSix:sixthAnswer,
+            answerSeven:seventhAnswer,
+            answerEight:eigthAnswer,
+            answerNine:ninthAnswer,
+            answerTen:tenthAnswer,
+            answerEleven:eleventhAnswer,
+            answerTwelve:twelvethAnswer
+    })}
 
   return (
     <MaxWidthWrapper className=' mx-auto'>
@@ -402,10 +447,35 @@ const SkillAssesment = () => {
             </div>
         </RadioGroup>
         </li>
-
-
     </ol>
+    <Button onClick={()=>onSubmit()} className=' w-full mt-5'>
+            {
+                next ? <div className=' flex flex-row gap-2'>
+                <Loader2 className=' h-6 w-6 animate-spin'/>
+               </div> : <div className=' flex flex-row gap-2'>
+                  <p>Next</p>
+               </div>
+            }
+        </Button>
 
+
+    <Dialog open={isOpen}>
+      <DialogContent className=' bg-white/50'>
+         <DialogHeader>
+            <DialogTitle className=' font-semibold text-lg'>You have not answered all the questions</DialogTitle>
+            <DialogDescription className=' text-md text-zinc-900'>
+              Please answer all the questions before submitting
+            </DialogDescription>
+         </DialogHeader>
+         <DialogFooter className="sm:justify-start">
+          <DialogClose asChild className=' mt-2'>
+            <Button type="button"  onClick={()=>setIsOpen(false)}>
+              Close
+            </Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+      </Dialog>
     </MaxWidthWrapper>
   )
 }

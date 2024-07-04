@@ -18,7 +18,6 @@ import { Loader2 } from 'lucide-react'
 import { trpc } from '../_trpc/client'
 import { useRouter } from 'next/navigation'
 
- 
 
 
 const PersonalityTraitTest = () => {

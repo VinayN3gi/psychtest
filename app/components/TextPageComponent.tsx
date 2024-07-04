@@ -7,6 +7,16 @@ import { Button } from '@/components/ui/button'
 import { trpc } from '../_trpc/client'
 import { useRouter } from 'next/navigation'
 import { Loader2 } from 'lucide-react'
+import {
+   Dialog,
+   DialogClose,
+   DialogContent,
+   DialogDescription,
+   DialogFooter,
+   DialogHeader,
+   DialogTitle,
+   DialogTrigger,
+} from "@/components/ui/dialog"
 
 const TextPageComponent = () => {
   const router=useRouter();
@@ -23,6 +33,7 @@ const TextPageComponent = () => {
   const [eleventhAnswer, setEleventhAnswer] = useState<string>('')
   const [twelvethAnswer, setTwelvethAnswer] = useState<string>('')
 
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const [next, setNext] = useState<boolean>(false)
 
 
@@ -33,7 +44,12 @@ const TextPageComponent = () => {
   })
 
   const handleSubmit=()=>{
-     
+      if(!firstAnswer || !secondAnswer || !thirdAnswer || !fourthAnswer || !fifthAnswer || !sixthAnswer || !seventhAnswer || !eigthAnswer || !ninthAnswer || !tenthAnswer || !eleventhAnswer || !twelvethAnswer)
+       {
+         setIsOpen(true)
+         return
+       }
+
       setNext(true)    
       createInterestInventory({
         answerOne:firstAnswer ? firstAnswer : 'A',
@@ -441,7 +457,24 @@ const TextPageComponent = () => {
          }
          </Button>
     </div>
-     
+    <Dialog open={isOpen}>
+      
+      <DialogContent className=' bg-white/50'>
+         <DialogHeader>
+            <DialogTitle className=' font-semibold text-lg'>You have not answered all the questions</DialogTitle>
+            <DialogDescription className=' text-md text-zinc-900'>
+              Please answer all the questions before submitting
+            </DialogDescription>
+         </DialogHeader>
+         <DialogFooter className="sm:justify-start">
+          <DialogClose asChild className=' mt-2'>
+            <Button type="button"  onClick={()=>setIsOpen(false)}>
+              Close
+            </Button>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+      </Dialog>
        
   </MaxWidthWrapper>
   )

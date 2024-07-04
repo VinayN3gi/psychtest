@@ -25,6 +25,8 @@ model User{
 
   InterestInventory InterestInventory?
   PersonalityInventory PersonalityInventory?
+  SkillAssesment SkillAssesment?
+  ValueAssesment ValueAssesment?
 }
 
 model InterestInventory{
@@ -61,6 +63,42 @@ model PersonalityInventory{
   answerTwelve String    
   answerThirteen String
   answerFourteen String
+  user User @relation(fields: [userId], references: [id])
+  userId String @unique
+}
+
+model SkillAssesment{
+  answerId String @id @default(cuid())
+  answerOne String 
+  answerTwo String  
+  answerThree String 
+  answerFour String 
+  answerFive String 
+  answerSix String 
+  answerSeven String 
+  answerEight String 
+  answerNine String 
+  answerTen String 
+  answerEleven String 
+  answerTwelve String    
+  user User @relation(fields: [userId], references: [id])
+  userId String @unique
+}
+
+model ValueAssesment{
+  answerId String @id @default(cuid())
+  answerOne String 
+  answerTwo String  
+  answerThree String 
+  answerFour String 
+  answerFive String 
+  answerSix String 
+  answerSeven String 
+  answerEight String 
+  answerNine String 
+  answerTen String 
+  answerEleven String 
+  answerTwelve String    
   user User @relation(fields: [userId], references: [id])
   userId String @unique
 }
