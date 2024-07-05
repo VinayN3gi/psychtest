@@ -37,7 +37,7 @@ const SkillAssesment = () => {
 
     const {mutate:createSkillAssesmentAnswer}=trpc.skillAssesmentAnswer.useMutation({
          onSuccess:()=>{
-            router.replace("/testPage4")
+            router.push("/testPage4")
          },
          retry:true,
          retryDelay:500
