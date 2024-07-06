@@ -29,14 +29,6 @@ const page = () => {
       pdf.save('report.pdf')
       setLoader(false)
 
-      /*const canvas=await html2canvas(capture,{scale:3})
-      const imgData = canvas.toDataURL('image/png')
-      const pdf = new jsPDF('p', 'px', 'a4',true)
-      const width=pdf.internal.pageSize.getWidth()
-      const height=(canvas.height*width)/canvas.width
-      pdf.addImage(imgData, 'PNG', 0, 0,width,height,'','FAST')  
-      pdf.save('report.pdf')
-      setLoader(false)*/
     } catch (error) {
       console.log(error)
     }

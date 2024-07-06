@@ -27,18 +27,18 @@ export const appRouter=router({
         return dbUser
     }),
     createInerestInvetory:publicProcedure.input(z.object({
-        answerOne:z.string() || z.null(),
-        answerTwo:z.string() || z.null(),
-        answerThree:z.string() || z.null(),
-        answerFour:z.string() || z.null(),
-        answerFive:z.string() || z.null(),
-        answerSix:z.string() || z.null(),
-        answerSeven:z.string() || z.null(),
-        answerEight:z.string() || z.null(),
-        answerNine:z.string() || z.null(),
-        answerTen:z.string() || z.null(),
-        answerEleven:z.string() || z.null(),
-        answerTwelve:z.string() || z.null(),
+        answerOne:z.number() || z.null(),
+        answerTwo:z.number() || z.null(),
+        answerThree:z.number() || z.null(),
+        answerFour:z.number() || z.null(),
+        answerFive:z.number() || z.null(),
+        answerSix:z.number() || z.null(),
+        answerSeven:z.number() || z.null(),
+        answerEight:z.number() || z.null(),
+        answerNine:z.number() || z.null(),
+        answerTen:z.number() || z.null(),
+        answerEleven:z.number() || z.null(),
+        answerTwelve:z.number() || z.null(),
     })).mutation(async({input})=>{
         const {getUser}=getKindeServerSession()
         const user=await getUser()
@@ -80,20 +80,20 @@ export const appRouter=router({
     }),
 
     createPersonalityInventory:publicProcedure.input(z.object({
-        answerOne:z.string() || z.null(),
-        answerTwo:z.string() || z.null(),
-        answerThree:z.string() || z.null(),
-        answerFour:z.string() || z.null(),
-        answerFive:z.string() || z.null(),
-        answerSix:z.string() || z.null(),
-        answerSeven:z.string() || z.null(),
-        answerEight:z.string() || z.null(),
-        answerNine:z.string() || z.null(),
-        answerTen:z.string() || z.null(),
-        answerEleven:z.string() || z.null(),
-        answerTwelve:z.string() || z.null(),
-        answerThirteen:z.string() || z.null(),
-        answerFourteen:z.string() || z.null(),
+        answerOne:z.number() || z.null(),
+        answerTwo:z.number() || z.null(),
+        answerThree:z.number() || z.null(),
+        answerFour:z.number() || z.null(),
+        answerFive:z.number() || z.null(),
+        answerSix:z.number() || z.null(),
+        answerSeven:z.number() || z.null(),
+        answerEight:z.number() || z.null(),
+        answerNine:z.number() || z.null(),
+        answerTen:z.number() || z.null(),
+        answerEleven:z.number() || z.null(),
+        answerTwelve:z.number() || z.null(),
+        answerThirteen:z.number() || z.null(),
+        answerFourteen:z.number() || z.null(),
         
     })).mutation(async ({input})=>{
         const {getUser}=getKindeServerSession()
@@ -130,18 +130,18 @@ export const appRouter=router({
         }
     }),
     skillAssesmentAnswer:publicProcedure.input(z.object({
-        answerOne:z.string() || z.null(),
-        answerTwo:z.string() || z.null(),
-        answerThree:z.string() || z.null(),
-        answerFour:z.string() || z.null(),
-        answerFive:z.string() || z.null(),
-        answerSix:z.string() || z.null(),
-        answerSeven:z.string() || z.null(),
-        answerEight:z.string() || z.null(),
-        answerNine:z.string() || z.null(),
-        answerTen:z.string() || z.null(),
-        answerEleven:z.string() || z.null(),
-        answerTwelve:z.string() || z.null(),
+        answerOne:z.number() || z.null(),
+        answerTwo:z.number() || z.null(),
+        answerThree:z.number() || z.null(),
+        answerFour:z.number() || z.null(),
+        answerFive:z.number() || z.null(),
+        answerSix:z.number() || z.null(),
+        answerSeven:z.number() || z.null(),
+        answerEight:z.number() || z.null(),
+        answerNine:z.number() || z.null(),
+        answerTen:z.number() || z.null(),
+        answerEleven:z.number() || z.null(),
+        answerTwelve:z.number() || z.null(),
     })).mutation(async({input})=>{
         const {getUser}=getKindeServerSession()
         const user=await getUser()
@@ -178,18 +178,18 @@ export const appRouter=router({
         }
     }),
     ValueAssesment:publicProcedure.input(z.object({
-        answerOne:z.string() || z.null(),
-        answerTwo:z.string() || z.null(),
-        answerThree:z.string() || z.null(),
-        answerFour:z.string() || z.null(),
-        answerFive:z.string() || z.null(),
-        answerSix:z.string() || z.null(),
-        answerSeven:z.string() || z.null(),
-        answerEight:z.string() || z.null(),
-        answerNine:z.string() || z.null(),
-        answerTen:z.string() || z.null(),
-        answerEleven:z.string() || z.null(),
-        answerTwelve:z.string() || z.null(),
+        answerOne:z.number() || z.null(),
+        answerTwo:z.number() || z.null(),
+        answerThree:z.number() || z.null(),
+        answerFour:z.number() || z.null(),
+        answerFive:z.number() || z.null(),
+        answerSix:z.number() || z.null(),
+        answerSeven:z.number() || z.null(),
+        answerEight:z.number() || z.null(),
+        answerNine:z.number() || z.null(),
+        answerTen:z.number() || z.null(),
+        answerEleven:z.number() || z.null(),
+        answerTwelve:z.number() || z.null(),
     })).mutation(async({input})=>{
         const {getUser}=getKindeServerSession()
         const user=await getUser()
@@ -224,7 +224,46 @@ export const appRouter=router({
             console.error('Failed to create value assesment',error)
             throw new TRPCError({code:'INTERNAL_SERVER_ERROR',message:'Failed to create value assesment'})
         }
-    })
+    }),
+
+
+    
+    getInterestInventory:publicProcedure.query(async()=>{
+        const {getUser}=getKindeServerSession()
+        const user=await getUser()
+        if(!user || !user.id) throw new TRPCError({code:'UNAUTHORIZED',message:'Not logged in'})
+        
+        const file=await db.interestInventoryTable.findFirst({where:{userId:user.id}})    
+
+        if(!file)
+        {
+            const values=await db.interestInventory.findFirst({where:{userId:user.id}})
+            if(!values) throw new TRPCError({code:'NOT_FOUND',message:'No interest inventory found'})
+
+            let artisticScore=0;
+            let investigativeScore=0;
+            let socialScore=0;
+            let realisticScore=0;
+            let enterprisingScore=0;
+            let conventionalScore=0;
+            for (const [key,value] of Object.entries(values))
+            {
+                if(key==='answerThree' || key==="answerNine") artisticScore+=Number(value)
+                else if (key==="answerFive" || key==="answerEleven") enterprisingScore+=Number(value)
+                else if(key==="answerTwo" || key==="answerEight") investigativeScore+=Number(value)
+                else if(key==="answerOne" || key==="answerSeven") realisticScore+=Number(value)
+                else if(key==="answerFour" || key==="answerTen") socialScore+=Number(value)
+                else if(key==="answerSix" || key==="answerTwelve") conventionalScore+=Number(value)
+            }
+            const file=await db.interestInventoryTable.create({data:{
+                artisticScore,investigativeScore,socialScore,realisticScore,enterprisingScore,conventionalScore,
+                userId:user.id
+            }})
+            return file
+        }
+        return file
+    
+    }),
 })
 
 export type AppRouter=typeof appRouter;

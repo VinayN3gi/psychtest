@@ -21,20 +21,20 @@ import { useRouter } from 'next/navigation'
 
 
 const PersonalityTraitTest = () => {
-  const [firstAnswer, setFirstAnswer] = useState<string>('')
-  const [secondAnswer, setSecondAnswer] = useState<string>('')
-  const [thirdAnswer, setThirdAnswer] = useState<string>('')
-  const [fourthAnswer, setFourthAnswer] = useState<string>('')
-  const [fifthAnswer, setFifthAnswer] = useState<string>('')
-  const [sixthAnswer, setSixthAnswer] = useState<string>('')
-  const [seventhAnswer, setSeventhAnswer] = useState<string>('')
-  const [eigthAnswer, setEigthAnswer] = useState<string>('')
-  const [ninthAnswer, setNinthAnswer] = useState<string>('')
-  const [tenthAnswer, setTenthAnswer] = useState<string>('')
-  const [eleventhAnswer, setEleventhAnswer] = useState<string>('')
-  const [twelvethAnswer, setTwelvethAnswer] = useState<string>('')
-   const [thirteenthAnswer, setThirteenthAnswer] = useState<string>('')
-   const [fourteenthAnswer, setFourteenthAnswer] = useState<string>('')
+  const [firstAnswer, setFirstAnswer] = useState<number>()
+  const [secondAnswer, setSecondAnswer] = useState<number>()
+  const [thirdAnswer, setThirdAnswer] = useState<number>()
+  const [fourthAnswer, setFourthAnswer] = useState<number>()
+  const [fifthAnswer, setFifthAnswer] = useState<number>()
+  const [sixthAnswer, setSixthAnswer] = useState<number>()
+  const [seventhAnswer, setSeventhAnswer] = useState<number>()
+  const [eigthAnswer, setEigthAnswer] = useState<number>()
+  const [ninthAnswer, setNinthAnswer] = useState<number>()
+  const [tenthAnswer, setTenthAnswer] = useState<number>()
+  const [eleventhAnswer, setEleventhAnswer] = useState<number>()
+  const [twelvethAnswer, setTwelvethAnswer] = useState<number>()
+   const [thirteenthAnswer, setThirteenthAnswer] = useState<number>()
+   const [fourteenthAnswer, setFourteenthAnswer] = useState<number>()
 
    const [isOpen, setIsOpen] = useState(false)  
    const [next, setNext] = useState(false)
@@ -97,23 +97,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-one" id="option-one"  onClick={()=>setFirstAnswer('A')}/>
+            <RadioGroupItem value="option-one" id="option-one"  onClick={()=>setFirstAnswer(1)}/>
             <Label htmlFor="option-one" className='  hover:text-red-700 hover:cursor-pointer'>Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-two" id="option-two"  onClick={()=>setFirstAnswer('B')}/>
+            <RadioGroupItem value="option-two" id="option-two"  onClick={()=>setFirstAnswer(2)}/>
             <Label htmlFor="option-two" className='  hover:text-red-600/75 hover:cursor-pointer'>Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-three" id="option-three"  onClick={()=>setFirstAnswer('C')}/>
+            <RadioGroupItem value="option-three" id="option-three"  onClick={()=>setFirstAnswer(3)}/>
             <Label htmlFor="option-three" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-four" id="option-four"  onClick={()=>setFirstAnswer('D')}/>
+            <RadioGroupItem value="option-four" id="option-four"  onClick={()=>setFirstAnswer(4)}/>
             <Label htmlFor="option-four" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-five" id="option-five"  onClick={()=>setFirstAnswer('E')}/>
+            <RadioGroupItem value="option-five" id="option-five"  onClick={()=>setFirstAnswer(5)}/>
             <Label htmlFor="option-five" className=' hover:text-green-700 hover:cursor-pointer'>Strongly agree</Label>
             </div>
         </RadioGroup>
@@ -129,23 +129,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-six" id="option-six"  onClick={()=>setSecondAnswer('A')}/>
+            <RadioGroupItem value="option-six" id="option-six"  onClick={()=>setSecondAnswer(1)}/>
             <Label htmlFor="option-six" className='  hover:text-red-700 hover:cursor-pointer' >Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-seven" id="option-seven"  onClick={()=>setSecondAnswer('B')}/>
+            <RadioGroupItem value="option-seven" id="option-seven"  onClick={()=>setSecondAnswer(2)}/>
             <Label htmlFor="option-seven" className='  hover:text-red-600/75 hover:cursor-pointer' >Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-eigth" id="option-eigth"  onClick={()=>setSecondAnswer('C')}/>
+            <RadioGroupItem value="option-eigth" id="option-eigth"  onClick={()=>setSecondAnswer(3)}/>
             <Label htmlFor="option-eigth" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-nine" id="option-nine"  onClick={()=>setSecondAnswer('D')}/>
+            <RadioGroupItem value="option-nine" id="option-nine"  onClick={()=>setSecondAnswer(4)}/>
             <Label htmlFor="option-nine" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-ten" id="option-ten"  onClick={()=>setSecondAnswer('E')}/>
+            <RadioGroupItem value="option-ten" id="option-ten"  onClick={()=>setSecondAnswer(5)}/>
             <Label htmlFor="option-ten" className=' hover:text-green-700 hover:cursor-pointer'>Stronglt agree</Label>
             </div>
         </RadioGroup>
@@ -160,23 +160,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-eleven" id="option-eleven"  onClick={()=>setThirdAnswer('A')}/>
+            <RadioGroupItem value="option-eleven" id="option-eleven"  onClick={()=>setThirdAnswer(1)}/>
             <Label htmlFor="option-eleven" className='  hover:text-red-700 hover:cursor-pointer'>Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-twelve" id="option-twelve"  onClick={()=>setThirdAnswer('B')}/>
+            <RadioGroupItem value="option-twelve" id="option-twelve"  onClick={()=>setThirdAnswer(2)}/>
             <Label htmlFor="option-twelve" className='  hover:text-red-600/75 hover:cursor-pointer'>Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-thirteen" id="option-thirteen"  onClick={()=>setThirdAnswer('C')}/>
+            <RadioGroupItem value="option-thirteen" id="option-thirteen"  onClick={()=>setThirdAnswer(3)}/>
             <Label htmlFor="option-thirteen" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fourteen" id="option-fourteen"  onClick={()=>setThirdAnswer('D')}/>
+            <RadioGroupItem value="option-fourteen" id="option-fourteen"  onClick={()=>setThirdAnswer(4)}/>
             <Label htmlFor="option-fourteen" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-fifteen" id="option-fifteen"  onClick={()=>setThirdAnswer('E')}/>
+            <RadioGroupItem value="option-fifteen" id="option-fifteen"  onClick={()=>setThirdAnswer(5)}/>
             <Label htmlFor="option-fifteen" className=' hover:text-green-700 hover:cursor-pointer'>Strongly agree</Label>
             </div>
         </RadioGroup>
@@ -190,23 +190,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-sixteen" id="option-sixteen"  onClick={()=>setFourthAnswer('A')}/>
+            <RadioGroupItem value="option-sixteen" id="option-sixteen"  onClick={()=>setFourthAnswer(1)}/>
             <Label htmlFor="option-sixteen" className='  hover:text-red-700 hover: cursor-pointer'>Never</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-seventeen" id="option-seventeen"  onClick={()=>setFourthAnswer('B')}/>
+            <RadioGroupItem value="option-seventeen" id="option-seventeen"  onClick={()=>setFourthAnswer(2)}/>
             <Label htmlFor="option-seventeen" className='  hover:text-red-600/75 hover: cursor-pointer'>Rarely</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-eigthteen" id="option-eigthteen"  onClick={()=>setFourthAnswer('C')}/>
+            <RadioGroupItem value="option-eigthteen" id="option-eigthteen"  onClick={()=>setFourthAnswer(3)}/>
             <Label htmlFor="option-eigthteen" className=' hover:text-green-600/50 hover:cursor-pointer '>Sometimes</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-nineteen" id="option-nineteen"  onClick={()=>setFourthAnswer('D')}/>
+            <RadioGroupItem value="option-nineteen" id="option-nineteen"  onClick={()=>setFourthAnswer(4)}/>
             <Label htmlFor="option-nineteen" className=' hover:text-green-600/90 hover:cursor-pointer'>Often</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-twnety" id="option-twenty"  onClick={()=>setFourthAnswer('E')}/>
+            <RadioGroupItem value="option-twnety" id="option-twenty"  onClick={()=>setFourthAnswer(5)}/>
             <Label htmlFor="option-twenty" className=' hover:text-green-700 hover:cursor-pointer'>Always</Label>
             </div>
         </RadioGroup>
@@ -221,23 +221,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-twentyone" id="option-twentyone"  onClick={()=>setFifthAnswer('A')}/>
+            <RadioGroupItem value="option-twentyone" id="option-twentyone"  onClick={()=>setFifthAnswer(1)}/>
             <Label htmlFor="option-twentyone" className='  hover:text-red-700 hover:cursor-pointer'>Not well at all</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-twentytwo" id="option-twentytwo"  onClick={()=>setFifthAnswer('B')}/>
+            <RadioGroupItem value="option-twentytwo" id="option-twentytwo"  onClick={()=>setFifthAnswer(2)}/>
             <Label htmlFor="option-twentytwo" className='  hover:text-red-600/75 hover:cursor-pointer'>Poorly</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-twentythree" id="option-twentythree"  onClick={()=>setFifthAnswer('C')}/>
+            <RadioGroupItem value="option-twentythree" id="option-twentythree"  onClick={()=>setFifthAnswer(3)}/>
             <Label htmlFor="option-twentythree" className=' hover:text-green-600/50 hover:cursor-pointer '>Average</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-twentyfour" id="option-twentyfour"  onClick={()=>setFifthAnswer('D')}/>
+            <RadioGroupItem value="option-twentyfour" id="option-twentyfour"  onClick={()=>setFifthAnswer(4)}/>
             <Label htmlFor="option-twentyfour" className=' hover:text-green-600/90 hover:cursor-pointer'>Well</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-twnetyfive" id="option-twentyfive"  onClick={()=>setFifthAnswer('E')}/>
+            <RadioGroupItem value="option-twnetyfive" id="option-twentyfive"  onClick={()=>setFifthAnswer(5)}/>
             <Label htmlFor="option-twentyfive" className=' hover:text-green-700 hover:cursor-pointer'>Very Well</Label>
             </div>
         </RadioGroup>
@@ -252,23 +252,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-twentysix" id="option-twentysix"  onClick={()=>setSixthAnswer('A')}/>
+            <RadioGroupItem value="option-twentysix" id="option-twentysix"  onClick={()=>setSixthAnswer(1)}/>
             <Label htmlFor="option-twentysix" className='  hover:text-red-700 hover:cursor-pointer'>Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-twentyseven" id="option-twentyseven"  onClick={()=>setSixthAnswer('B')}/>
+            <RadioGroupItem value="option-twentyseven" id="option-twentyseven"  onClick={()=>setSixthAnswer(2)}/>
             <Label htmlFor="option-twentyseven" className='  hover:text-red-600/75 hover:cursor-pointer'>Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-twentyeigth" id="option-twentyeigth"  onClick={()=>setSixthAnswer('C')}/>
+            <RadioGroupItem value="option-twentyeigth" id="option-twentyeigth"  onClick={()=>setSixthAnswer(3)}/>
             <Label htmlFor="option-twentyeigth" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-twentynine" id="option-twentynine"  onClick={()=>setSixthAnswer('D')}/>
+            <RadioGroupItem value="option-twentynine" id="option-twentynine"  onClick={()=>setSixthAnswer(4)}/>
             <Label htmlFor="option-twentynine" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-thirty" id="option-thirty"  onClick={()=>setSixthAnswer('E')}/>
+            <RadioGroupItem value="option-thirty" id="option-thirty"  onClick={()=>setSixthAnswer(5)}/>
             <Label htmlFor="option-thirty" className=' hover:text-green-700 hover:cursor-pointer'>Strongly Agree</Label>
             </div>
         </RadioGroup>
@@ -283,23 +283,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-thirtyone" id="option-thirtyone"  onClick={()=>setSeventhAnswer('A')}/>
+            <RadioGroupItem value="option-thirtyone" id="option-thirtyone"  onClick={()=>setSeventhAnswer(1)}/>
             <Label htmlFor="option-thirtyone" className='  hover:text-red-700 hover:cursor-pointer'>Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-thirtytwo" id="option-thirtytwo"  onClick={()=>setSeventhAnswer('B')}/>
+            <RadioGroupItem value="option-thirtytwo" id="option-thirtytwo"  onClick={()=>setSeventhAnswer(2)}/>
             <Label htmlFor="option-thirtytwo" className='  hover:text-red-600/75 hover:cursor-pointer'>Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-thirtythree" id="option-thirtythree"  onClick={()=>setSeventhAnswer('C')}/>
+            <RadioGroupItem value="option-thirtythree" id="option-thirtythree"  onClick={()=>setSeventhAnswer(3)}/>
             <Label htmlFor="option-thirtythree" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-thirtyfour" id="option-thirtyfour"  onClick={()=>setSeventhAnswer('D')}/>
+            <RadioGroupItem value="option-thirtyfour" id="option-thirtyfour"  onClick={()=>setSeventhAnswer(4)}/>
             <Label htmlFor="option-thirtyfour" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-thirtyfive" id="option-thirtyfive"  onClick={()=>setSeventhAnswer('E')}/>
+            <RadioGroupItem value="option-thirtyfive" id="option-thirtyfive"  onClick={()=>setSeventhAnswer(5)}/>
             <Label htmlFor="option-thirtyfive" className=' hover:text-green-700 hover:cursor-pointer'>Strongly Agree</Label>
             </div>  
         </RadioGroup>
@@ -314,23 +314,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-thirtysix" id="option-thirtysix"  onClick={()=>setEigthAnswer('A')}/>
+            <RadioGroupItem value="option-thirtysix" id="option-thirtysix"  onClick={()=>setEigthAnswer(1)}/>
             <Label htmlFor="option-thirtysix" className='  hover:text-red-700 hover:cursor-pointer'>Very uncomfortable</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-thirtyseven" id="option-thirtyseven"  onClick={()=>setEigthAnswer('B')}/>
+            <RadioGroupItem value="option-thirtyseven" id="option-thirtyseven"  onClick={()=>setEigthAnswer(2)}/>
             <Label htmlFor="option-thirtyseven" className='  hover:text-red-600/75 hover:cursor-pointer'>Uncomfortable</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-thirtyeigth" id="option-thirtyeigth"  onClick={()=>setEigthAnswer('C')}/>
+            <RadioGroupItem value="option-thirtyeigth" id="option-thirtyeigth"  onClick={()=>setEigthAnswer(3)}/>
             <Label htmlFor="option-thirtyeigth" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-thirtynine" id="option-thirtynine"  onClick={()=>setEigthAnswer('D')}/>
+            <RadioGroupItem value="option-thirtynine" id="option-thirtynine"  onClick={()=>setEigthAnswer(4)}/>
             <Label htmlFor="option-thirtynine" className=' hover:text-green-600/90 hover:cursor-pointer'>Comfortable</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-fourty" id="option-fourty"  onClick={()=>setEigthAnswer('E')}/>
+            <RadioGroupItem value="option-fourty" id="option-fourty"  onClick={()=>setEigthAnswer(5)}/>
             <Label htmlFor="option-fourty" className=' hover:text-green-700 hover:cursor-pointer'>Very Comfortable</Label>
             </div>
         </RadioGroup>
@@ -345,23 +345,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-fourtyone" id="option-fourtyone"  onClick={()=>setNinthAnswer('A')}/>
+            <RadioGroupItem value="option-fourtyone" id="option-fourtyone"  onClick={()=>setNinthAnswer(1)}/>
             <Label htmlFor="option-fourtyone" className=' hover:text-red-700 hover:cursor-pointer'>Never</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fourtytwo" id="option-fourtytwo"  onClick={()=>setNinthAnswer('B')}/>
+            <RadioGroupItem value="option-fourtytwo" id="option-fourtytwo"  onClick={()=>setNinthAnswer(2)}/>
             <Label htmlFor="option-fourtytwo" className='  hover:text-red-600/75 cursor-pointer'>Rarely</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fourtythree" id="option-fourtythree"  onClick={()=>setNinthAnswer('C')}/>
+            <RadioGroupItem value="option-fourtythree" id="option-fourtythree"  onClick={()=>setNinthAnswer(3)}/>
             <Label htmlFor="option-fourtythree" className=' hover:text-green-600/50 hover:cursor-pointer '>Sometimes</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fourtyfour" id="option-fourtyfour"  onClick={()=>setNinthAnswer('D')}/>
+            <RadioGroupItem value="option-fourtyfour" id="option-fourtyfour"  onClick={()=>setNinthAnswer(4)}/>
             <Label htmlFor="option-fourtyfour" className=' hover:text-green-600/90 hover:cursor-pointer'>Often</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-fourtyfive" id="option-fourtyfive"  onClick={()=>setNinthAnswer('E')}/>
+            <RadioGroupItem value="option-fourtyfive" id="option-fourtyfive"  onClick={()=>setNinthAnswer(5)}/>
             <Label htmlFor="option-fourtyfive" className=' hover:text-green-700 hover:cursor-pointer'>Always</Label>
             </div>
         </RadioGroup>
@@ -375,23 +375,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-fourtysix" id="option-fourtysix"  onClick={()=>setTenthAnswer('A')}/>
+            <RadioGroupItem value="option-fourtysix" id="option-fourtysix"  onClick={()=>setTenthAnswer(1)}/>
             <Label htmlFor="option-fourtysix" className='  hover:text-red-700 cursor-pointer'>Never</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fourtyseven" id="option-fourtyseven"  onClick={()=>setTenthAnswer('B')}/>
+            <RadioGroupItem value="option-fourtyseven" id="option-fourtyseven"  onClick={()=>setTenthAnswer(2)}/>
             <Label htmlFor="option-fourtyseven" className='  hover:text-red-600/75 cursor-pointer'>Rarely</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fourtyeigth" id="option-fourtyeigth"  onClick={()=>setTenthAnswer('C')}/>
+            <RadioGroupItem value="option-fourtyeigth" id="option-fourtyeigth"  onClick={()=>setTenthAnswer(3)}/>
             <Label htmlFor="option-fourtyeigth" className=' hover:text-green-600/50 hover:cursor-pointer '>Sometimes</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fourtynine" id="option-fourtynine"  onClick={()=>setTenthAnswer('D')}/>
+            <RadioGroupItem value="option-fourtynine" id="option-fourtynine"  onClick={()=>setTenthAnswer(4)}/>
             <Label htmlFor="option-fourtynine" className=' hover:text-green-600/90 hover:cursor-pointer'>Often</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-fifty" id="option-fifty"  onClick={()=>setTenthAnswer('E')}/>
+            <RadioGroupItem value="option-fifty" id="option-fifty"  onClick={()=>setTenthAnswer(5)}/>
             <Label htmlFor="option-fifty" className=' hover:text-green-700 hover:cursor-pointer'>Always</Label>
             </div>
         </RadioGroup>
@@ -405,23 +405,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-fiftyone" id="option-fiftyone"  onClick={()=>setEleventhAnswer('A')}/>
+            <RadioGroupItem value="option-fiftyone" id="option-fiftyone"  onClick={()=>setEleventhAnswer(1)}/>
             <Label htmlFor="option-fiftyone" className='  hover:text-red-700 cursor-pointer'>Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fiftytwo" id="option-fiftytwo"  onClick={()=>setEleventhAnswer('B')}/>
+            <RadioGroupItem value="option-fiftytwo" id="option-fiftytwo"  onClick={()=>setEleventhAnswer(2)}/>
             <Label htmlFor="option-fiftytwo" className='  hover:text-red-600/75 cursor-pointer'>Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fiftythree" id="option-fiftythree"  onClick={()=>setEleventhAnswer('C')}/>
+            <RadioGroupItem value="option-fiftythree" id="option-fiftythree"  onClick={()=>setEleventhAnswer(3)}/>
             <Label htmlFor="option-fiftythree" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fiftyfour" id="option-fiftyfour"  onClick={()=>setEleventhAnswer('D')}/>
+            <RadioGroupItem value="option-fiftyfour" id="option-fiftyfour"  onClick={()=>setEleventhAnswer(4)}/>
             <Label htmlFor="option-fiftyfour" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-fiftyfive" id="option-fiftyfive"  onClick={()=>setEleventhAnswer('E')}/>
+            <RadioGroupItem value="option-fiftyfive" id="option-fiftyfive"  onClick={()=>setEleventhAnswer(5)}/>
             <Label htmlFor="option-fiftyfive" className=' hover:text-green-700 hover:cursor-pointer'>Strongly Agree</Label>
             </div>
         </RadioGroup>
@@ -436,23 +436,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-fiftysix" id="option-fiftysix"  onClick={()=>setTwelvethAnswer('A')}/>
+            <RadioGroupItem value="option-fiftysix" id="option-fiftysix"  onClick={()=>setTwelvethAnswer(1)}/>
             <Label htmlFor="option-fiftysix" className='  hover:text-red-700 hover:cursor-pointer'>Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fiftyseven" id="option-fiftyseven"  onClick={()=>setTwelvethAnswer('B')}/>
+            <RadioGroupItem value="option-fiftyseven" id="option-fiftyseven"  onClick={()=>setTwelvethAnswer(2)}/>
             <Label htmlFor="option-fiftyseven" className='  hover:text-red-600/75 hover:cursor-pointer'>Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fiftyeigth" id="option-fiftyeigth"  onClick={()=>setTwelvethAnswer('C')}/>
+            <RadioGroupItem value="option-fiftyeigth" id="option-fiftyeigth"  onClick={()=>setTwelvethAnswer(3)}/>
             <Label htmlFor="option-fiftyeigth" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-fiftynine" id="option-fiftynine"  onClick={()=>setTwelvethAnswer('D')}/>
+            <RadioGroupItem value="option-fiftynine" id="option-fiftynine"  onClick={()=>setTwelvethAnswer(4)}/>
             <Label htmlFor="option-fiftynine" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-sixty" id="option-sixty"  onClick={()=>setTwelvethAnswer('E')}/>
+            <RadioGroupItem value="option-sixty" id="option-sixty"  onClick={()=>setTwelvethAnswer(5)}/>
             <Label htmlFor="option-sixty" className=' hover:text-green-700 hover:cursor-pointer'>Strongly Agree</Label>
             </div>
         </RadioGroup>
@@ -467,23 +467,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-sixtyone" id="option-sixtyone"  onClick={()=>setThirteenthAnswer('A')}/>
+            <RadioGroupItem value="option-sixtyone" id="option-sixtyone"  onClick={()=>setThirteenthAnswer(1)}/>
             <Label htmlFor="option-sixtyone" className='  hover:text-red-700 hover:cursor-pointer'>Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-sixtytwo" id="option-sixtytwo"  onClick={()=>setThirteenthAnswer('B')}/>
+            <RadioGroupItem value="option-sixtytwo" id="option-sixtytwo"  onClick={()=>setThirteenthAnswer(2)}/>
             <Label htmlFor="option-sixtytwo" className='  hover:text-red-600/75 hover:cursor-pointer'>Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-sixtythree" id="option-sixtythree"  onClick={()=>setThirteenthAnswer('C')}/>
+            <RadioGroupItem value="option-sixtythree" id="option-sixtythree"  onClick={()=>setThirteenthAnswer(3)}/>
             <Label htmlFor="option-sixtythree" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-sixtyfour" id="option-sixtyfour"  onClick={()=>setThirteenthAnswer('D')}/>
+            <RadioGroupItem value="option-sixtyfour" id="option-sixtyfour"  onClick={()=>setThirteenthAnswer(4)}/>
             <Label htmlFor="option-sixtyfour" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-sixtyfive" id="option-sixtyfive"  onClick={()=>setThirteenthAnswer('E')}/>
+            <RadioGroupItem value="option-sixtyfive" id="option-sixtyfive"  onClick={()=>setThirteenthAnswer(5)}/>
             <Label htmlFor="option-sixtyfive" className=' hover:text-green-700 hover:cursor-pointer'>Strongly Agree</Label>
             </div>
         </RadioGroup>
@@ -497,23 +497,23 @@ const PersonalityTraitTest = () => {
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
-            <RadioGroupItem value="option-sixtysix" id="option-sixtysix"  onClick={()=>setFourteenthAnswer('A')}/>
+            <RadioGroupItem value="option-sixtysix" id="option-sixtysix"  onClick={()=>setFourteenthAnswer(1)}/>
             <Label htmlFor="option-sixtysix" className='  hover:text-red-700 hover:cursor-pointer'>Strongly disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-sixtyseven" id="option-sixtyseven"  onClick={()=>setFourteenthAnswer('B')}/>
+            <RadioGroupItem value="option-sixtyseven" id="option-sixtyseven"  onClick={()=>setFourteenthAnswer(2)}/>
             <Label htmlFor="option-sixtyseven" className='  hover:text-red-600/75 hover:cursor-pointer'>Disagree</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-sixtyeigth" id="option-sixtyeigth"  onClick={()=>setFourteenthAnswer('C')}/>
+            <RadioGroupItem value="option-sixtyeigth" id="option-sixtyeigth"  onClick={()=>setFourteenthAnswer(3)}/>
             <Label htmlFor="option-sixtyeigth" className=' hover:text-green-600/50 hover:cursor-pointer '>Neutral</Label>
             </div>
             <div className="flex items-center space-x-2">
-            <RadioGroupItem value="option-sixtynine" id="option-sixtynine"  onClick={()=>setFourteenthAnswer('D')}/>
+            <RadioGroupItem value="option-sixtynine" id="option-sixtynine"  onClick={()=>setFourteenthAnswer(4)}/>
             <Label htmlFor="option-sixtynine" className=' hover:text-green-600/90 hover:cursor-pointer'>Agree</Label>
             </div>
             <div className="flex items-center space-x-2 mb-4">
-            <RadioGroupItem value="option-seventy" id="option-seventy"  onClick={()=>setFourteenthAnswer('E')}/>
+            <RadioGroupItem value="option-seventy" id="option-seventy"  onClick={()=>setFourteenthAnswer(5)}/>
             <Label htmlFor="option-sixtyfive" className=' hover:text-green-700 hover:cursor-pointer'>Strongly Agree</Label>
             </div>
         </RadioGroup>
