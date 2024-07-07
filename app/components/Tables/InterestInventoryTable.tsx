@@ -43,32 +43,32 @@ const InterestInventoryTable = () => {
             </TableHeader>
             <TableBody className="text-gray-700 text-lg">
                 <TableRow className='bg-white'>
-                    <TableCell className="p-2 ">Artistic</TableCell>
+                    <TableCell className="p-2  w-[200px]">Artistic</TableCell>
                     <TableCell className="p-2">{`${data.artisticScore *10}%`}</TableCell>
                     <TableCell className="p-2">You enjoy creating art, music, dance, drama, or creative writing. Likes to express ideas artistically</TableCell>
                 </TableRow>
                 <TableRow className='bg-blue-100'>
-                    <TableCell className="p-2">Investigative</TableCell>
+                    <TableCell className="p-2 w-[200px]">Investigative</TableCell>
                     <TableCell className="p-2">{`${data.investigativeScore * 10}%`}</TableCell>
                     <TableCell className="p-2">Curious about scientific and technical subjects. Likes to solve problems and conduct research.</TableCell>
                 </TableRow>
                 <TableRow className='bg-white'>
-                    <TableCell className="p-2">Social</TableCell>
+                    <TableCell className="p-2 w-[200px]">Social</TableCell>
                     <TableCell className="p-2">{`${data.socialScore *10}%`}</TableCell>
                     <TableCell className="p-2">Prefers working with people,helping others and engaging in social activities.</TableCell>
                 </TableRow>
                 <TableRow className='bg-blue-100'>
-                    <TableCell className="p-2">Realistic</TableCell>
+                    <TableCell className="p-2 w-[200px]">Realistic</TableCell>
                     <TableCell className="p-2">{`${data.realisticScore *10}%`}</TableCell>
                     <TableCell className="p-2">Enjoys practical,hands-on activities and working with tools or machinery</TableCell>
                 </TableRow>
                 <TableRow className='bg-white'>
-                    <TableCell className="p-2">Enterprising</TableCell>
+                    <TableCell className="p-2 w-[200px]">Enterprising</TableCell>
                     <TableCell className="p-2">{`${data.enterprisingScore *10}%`}</TableCell>
                     <TableCell className="p-2">Interested in teading teams,making decisions,and maniging projects or businesses</TableCell>
                 </TableRow>
                 <TableRow className='bg-white'>
-                    <TableCell className="p-2">Conventional</TableCell>
+                    <TableCell className="p-2 w-[200px]">Conventional</TableCell>
                     <TableCell className="p-2">{`${data.conventionalScore *10}%`}</TableCell>
                     <TableCell className="p-2">Prefers structured ,orderly tasks like data management,accounting or administrative work.</TableCell>
                 </TableRow>

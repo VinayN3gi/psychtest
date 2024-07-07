@@ -264,6 +264,37 @@ export const appRouter=router({
         return file
     
     }),
+    getPesonalityInventory:publicProcedure.query(async()=>{
+        const {getUser}=getKindeServerSession()
+        const user=await getUser()
+        if(!user || !user.id) throw new TRPCError({code:'UNAUTHORIZED',message:'Not logged in'})
+        const file=await db.personalityTrait.findFirst({where:{userId:user.id}})    
+        if(!file)
+        {
+            const values=await db.personalityInventory.findFirst({where:{userId:user.id}})
+            if(!values) throw new TRPCError({code:'NOT_FOUND',message:'No personality inventory found'})
+            let extraversionScore =0
+            let agreeablenessScore=0 
+            let conscientiousnessScore=0
+            let stabilityScore=0
+            let experienceOpennessScore=0
+            for(const [key,value] of Object.entries(values))
+            {
+                if(key==="answerOne" || key==="answerEleven") experienceOpennessScore+=Number(value)
+                else if(key==="answerTwo" || key==="answerSeven") conscientiousnessScore+=Number(value)
+                else if(key==="answerThree" || key==="answerEigth") extraversionScore+=Number(value)
+                else if(key==="answerFour" || key==="answerNine") stabilityScore+=Number(value)
+                else if(key==="answerFive" || key==="answerTen") agreeablenessScore+=Number(value)
+            }
+            const file=await db.personalityTrait.create({data:{
+                extraversionScore,agreeablenessScore,conscientiousnessScore,stabilityScore,experienceOpennessScore,
+                userId:user.id
+            }})
+            return file
+        }
+
+        return file
+    })
 })
 
 export type AppRouter=typeof appRouter;

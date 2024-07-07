@@ -1,6 +1,7 @@
 import React from 'react'
 import { MaxWidthWrapper } from './MaxWidthWrapper'
 import InterestInventoryTable from './Tables/InterestInventoryTable'
+import PersonalityTraitTable from './Tables/PersonalityTraitTable'
 
 const ReportComponent = () => {
   return (
@@ -41,11 +42,18 @@ const ReportComponent = () => {
         </div>
 
         <div className=' mb-5'>
-          <h2 className=' text-2xl text-blue-500 font-bold  '>
+          <h2 className=' text-2xl text-blue-500 font-bold mb-5 '>
               2. Interest Inventory 
           </h2>
-        </div>
           <InterestInventoryTable/>
+        </div>
+
+        <div className=' mb-5'>
+          <h2 className=' text-2xl text-blue-500 font-bold mb-5 '>
+              3. Personality Traits
+          </h2>
+          <PersonalityTraitTable/>
+        </div>
 
     </div>
   )
