@@ -11,7 +11,15 @@ import {
 } from "@/components/ui/table"
 import { trpc } from '@/app/_trpc/client'
 import { Loader2 } from 'lucide-react'
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line,Legend,} from 'recharts';
 
+
+interface valuesInterface{
+    name:string,
+    score:number,
+    averageScore:number
+}
 
 
 const InterestInventoryTable = () => {
@@ -29,10 +37,20 @@ const InterestInventoryTable = () => {
             Please refresh the page or try again later
         </div>
         </div>
-    
-   
+
+
+    const values:valuesInterface[]=[
+        {name:'Autonomy',score:data.autonomyScore * 10,averageScore:45},
+        {name:'Innovation',score:data.innovationScore *10 ,averageScore:35},
+        {name:'Achievement',score:data.achievementScore * 10,averageScore:27},
+        {name:'Helping',score:data.helpingScore *10 ,averageScore:34},
+        {name:'Stability',score:data.stabilityScore *10 ,averageScore:39},
+        {name:'Financial',score:data.financialScore * 10 ,averageScore:42}
+
+    ]
 
     return (
+        <div>
         <Table className="min-w-full leading-normal shadow-md rounded-lg overflow-hidden">
             <TableHeader className="bg-blue-600 text-white">
                 <TableRow>
@@ -74,6 +92,63 @@ const InterestInventoryTable = () => {
                 </TableRow>
             </TableBody>
         </Table>
+
+        <div className=' mt-10  mb-10 '>
+            <h1 className=' text-xl  font-semibold text-blue-600 mb-4'>
+                    Value Assesment Scores
+            </h1>
+        <ResponsiveContainer width="100%" height={250} >
+        <AreaChart
+          width={500}
+          height={400}
+          data={values}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 0,
+            bottom: 0,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Area type="monotone" dataKey="score" stroke="#8884d8" fill="#8884d8" />
+        </AreaChart>
+      </ResponsiveContainer>
+        </div> 
+
+        <div className=' mb-5'>
+            <h1 className='text-xl text-blue-600 font-semibold mb-5'>
+                Value Assesment Comparision
+            </h1>
+
+        <ResponsiveContainer width="100%" height={250}>
+        <LineChart
+          width={500}
+          height={400}
+          data={values}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="score" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="averageScore" stroke="#82ca9d" />
+        </LineChart>
+      </ResponsiveContainer>
+
+          </div>
+
+
+        </div>
       );
 
 }

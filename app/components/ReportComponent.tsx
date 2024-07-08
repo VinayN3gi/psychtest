@@ -50,6 +50,9 @@ const ReportComponent = () => {
           <InterestInventoryTable/>
         </div>
 
+
+
+      {/* 
         <div className=' mb-5'>
           <h2 className=' text-2xl text-blue-500 font-bold mb-5 '>
               3. Personality Traits
@@ -63,7 +66,7 @@ const ReportComponent = () => {
           </h2>
           <SkillAssesmentTable/>
         </div>
-    
+        */}
     </div>
   )
 }

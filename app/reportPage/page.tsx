@@ -8,18 +8,22 @@ import ReportComponent from '../components/ReportComponent'
 import ValueAssesment from '../components/ValueAssesment'
 import ValueAssesmentTable from '../components/Tables/ValueAssesmentTable'
 import ReportComponentPage2 from '../components/ReportComponentPage2'
+import ReportComponentPage3 from '../components/ReportComponentPage3'
+import { Loader2 } from 'lucide-react'
 
 
 const page = () => {
   const [loader,setLoader] = useState(false)
-  const reportRef=useRef(null)
-  const tableRef=useRef(null)
+  const reportRefPage1=useRef(null)
+  const reportRefPage2=useRef(null)
+  const reportRefPage3=useRef(null)
+
   const downloadPDF = async () => {
-    const capture = reportRef.current as unknown as HTMLElement;
+    const capture = reportRefPage1.current as unknown as HTMLElement;
     setLoader(true)
      try {
       const canvas = await html2canvas(capture, {scale: 3})
-      const imgData = canvas.toDataURL('image/png')
+      const imgData = canvas.toDataURL('image/jpeg',1.0)
       const pdf = new jsPDF('p', 'px', 'a4', true)
       const margin = 15; // Define margin size
       const pageWidth = pdf.internal.pageSize.getWidth() - (margin * 2); 
@@ -27,19 +31,34 @@ const page = () => {
       const width = pageWidth;
       const height = (canvas.height * width) / canvas.width; 
       const finalHeight = height > pageHeight ? pageHeight : height;
-      pdf.addImage(imgData, 'PNG', margin, margin, width, finalHeight, '', 'FAST');
+      pdf.addImage(imgData, 'JPEG', margin, margin, width, finalHeight, '', 'FAST');
 
       {/*Adding page two */}
 
 
       pdf.addPage()
-      const tableCapture = tableRef.current as unknown as HTMLElement;
+      const tableCapture = reportRefPage2.current as unknown as HTMLElement;
       const tableCanvas = await html2canvas(tableCapture, {scale: 3})
-      const tableImgData = tableCanvas.toDataURL('image/png')
+      const tableImgData = tableCanvas.toDataURL('image/jpeg',1.0)
       const widthPage2=pageWidth
       const heightPage2 = (tableCanvas.height * widthPage2) / tableCanvas.width;
       const finalHeightPage2 = heightPage2 > pageHeight ? pageHeight : heightPage2;
-      pdf.addImage(tableImgData, 'PNG', margin, margin, widthPage2, finalHeightPage2, '', 'FAST');
+      pdf.addImage(tableImgData, 'JPEG', margin, margin, widthPage2, finalHeightPage2, '', 'FAST');
+     
+
+      {/*Adding page three */}
+      pdf.addPage()
+      const tableCapturePage3 = reportRefPage3.current as unknown as HTMLElement;
+      const tableCanvasPage3 = await html2canvas(tableCapturePage3, {scale: 3})
+      const tableImgDataPage3 = tableCanvasPage3.toDataURL('image/jpeg',1.0)
+      const widthPage3=pageWidth
+      const heightPage3 = (tableCanvasPage3.height * widthPage3) / tableCanvasPage3.width;
+      const finalHeightPage3 = heightPage3 > pageHeight ? pageHeight : heightPage3;
+      pdf.addImage(tableImgDataPage3, 'JPEG', margin, margin, widthPage3, finalHeightPage3, '', 'FAST');
+      
+
+
+
       pdf.save('report.pdf')
       setLoader(false)
     } catch (error) {
@@ -49,19 +68,25 @@ const page = () => {
 
   return (
     <MaxWidthWrapper className=' mx-auto'>
-      <div ref={reportRef} className=' mb-5'>
+      <div ref={reportRefPage1} className=' mb-5'>
       <ReportComponent/>
       </div>
 
-       <div ref={tableRef}>
+       <div ref={reportRefPage2}>
         <ReportComponentPage2/>
        </div>
 
-      <Button className='mt-5' onClick={downloadPDF}
+       <div ref={reportRefPage3}>
+        <ReportComponentPage3/>
+       </div>
+
+      <Button className='mt-5 w-full' onClick={downloadPDF}
       disabled={!(loader===false)}
       >
       {
-        loader ? 'Loading...' : 'Download Report'
+        loader ? 
+          'Downloading Report .....'
+         : 'Download Report'
       }
       </Button>
     </MaxWidthWrapper>

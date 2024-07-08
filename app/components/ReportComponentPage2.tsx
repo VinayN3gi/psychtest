@@ -1,5 +1,7 @@
 import React from 'react'
-import ValueAssesmentTable from './Tables/ValueAssesmentTable'
+import PersonalityTraitTable from './Tables/PersonalityTraitTable'
+import SkillAssesment from './SkillAssesment'
+import SkillAssesmentTable from './Tables/SkillAssesmentTable'
 
 const ReportComponentPage2 = () => {
   return (
@@ -7,10 +9,18 @@ const ReportComponentPage2 = () => {
 
         <div className=' mb-5'>
           <h2 className=' text-2xl text-blue-500 font-bold mb-5 '>
-              2. Value Assesment
+              3. Personality Traits
           </h2>
-          <ValueAssesmentTable/>
+          <PersonalityTraitTable/>
         </div>
+
+        <div className=' mb-5'>
+          <h2 className=' text-2xl text-blue-500 font-bold mb-5 '>
+              4. Skills Assesment
+          </h2>
+          <SkillAssesmentTable/>
+        </div>
+
     </div>
   )
 }
