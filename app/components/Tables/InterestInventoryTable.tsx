@@ -65,9 +65,9 @@ const InterestInventoryTable = () => {
                 <TableRow className='bg-white'>
                     <TableCell className="p-2 w-[200px]">Enterprising</TableCell>
                     <TableCell className="p-2">{`${data.enterprisingScore *10}%`}</TableCell>
-                    <TableCell className="p-2">Interested in teading teams,making decisions,and maniging projects or businesses</TableCell>
+                    <TableCell className="p-2">Interested in leading teams,making decisions,and maniging projects or businesses</TableCell>
                 </TableRow>
-                <TableRow className='bg-white'>
+                <TableRow className='bg-blue-100'>
                     <TableCell className="p-2 w-[200px]">Conventional</TableCell>
                     <TableCell className="p-2">{`${data.conventionalScore *10}%`}</TableCell>
                     <TableCell className="p-2">Prefers structured ,orderly tasks like data management,accounting or administrative work.</TableCell>

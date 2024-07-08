@@ -29,6 +29,8 @@ model User{
   ValueAssesment ValueAssesment?
   InterestInventoryTable InterestInventoryTable?
   PersonalityTrait PersonalityTrait?
+  SkillAssesmentTable SkillAssesmentTable?
+  ValueAssesmentTable ValueAssesmentTable?
 }
 
 model InterestInventory{
@@ -126,5 +128,28 @@ model PersonalityTrait{
   experienceOpennessScore Int
   user User @relation(fields: [userId], references: [id])
   userId String @unique
+}
 
+model SkillAssesmentTable{
+  tableId String @id @default(cuid())
+  user User @relation(fields: [userId], references: [id])
+  userId String @unique
+  analyticalScore Int
+  communicationScore Int
+  creativeScore Int
+  leadershipScore Int
+  technicalScore Int
+  teamworkScore Int
+}
+
+model ValueAssesmentTable{
+  tableId String @id @default(cuid())
+  user User @relation(fields: [userId], references: [id])
+  userId String @unique
+  achievementScore Int
+  innovationScore Int
+  stabilityScore Int
+  helpingScore Int
+  autonomyScore Int
+  financialScore Int
 }

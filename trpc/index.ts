@@ -294,7 +294,77 @@ export const appRouter=router({
         }
 
         return file
+    }),
+    getSkillAssesment:publicProcedure.query(async()=>{
+        const {getUser}=getKindeServerSession()
+        const user=await getUser()
+        if(!user || !user.id) throw new TRPCError({code:'UNAUTHORIZED',message:'Not logged in'})
+        const file=await db.skillAssesmentTable.findFirst({where:{userId:user.id}})
+        if(!file)
+        {
+            const values=await db.skillAssesment.findFirst({where:{userId:user.id}})
+            if(!values) throw new TRPCError({code:'NOT_FOUND',message:'No skill assesment found'})
+            let analyticalScore=0
+            let communicationScore=0
+            let creativeScore=0
+            let leadershipScore=0
+            let technicalScore=0
+            let teamworkScore=0  
+            for(const [key,value] of Object.entries(values))
+            {
+                if(key==="answerOne" || key==="answerSeven") analyticalScore+=Number(value)
+                else if(key==="answerThree" || key==="answerNine") communicationScore+=Number(value)
+                else if(key==="answerTwo" || key==="answerEight") creativeScore+=Number(value)
+                else if(key==="answerSix" || key==="answerTwelve") leadershipScore+=Number(value)
+                else if(key==="answerFour" || key==="answerTen") technicalScore+=Number(value)
+                else if(key==="answerFive" || key==="answerEleven") teamworkScore+=Number(value)
+            }
+            const file=await db.skillAssesmentTable.create({data:{
+                analyticalScore,communicationScore,creativeScore,leadershipScore,technicalScore,teamworkScore,
+                userId:user.id
+            }})
+            return file
+        }
+        return file
+    }),
+
+    getValueAssesment:publicProcedure.query(async()=>{
+        const {getUser}=getKindeServerSession()
+        const user=await getUser()
+        if(!user || !user.id) throw new TRPCError({code:'UNAUTHORIZED',message:'Not logged in'})
+        
+       const file=await db.valueAssesmentTable.findFirst({where:{userId:user.id}})
+       
+       if(!file)
+       {
+            const values=await db.valueAssesment.findFirst({where:{userId:user.id}})
+            if(!values) throw new TRPCError({code:'NOT_FOUND',message:'No value assesment found'})
+            let achievementScore=0
+            let innovationScore=0
+            let stabilityScore=0
+            let helpingScore=0
+            let autonomyScore=0
+            let financialScore=0
+            for(const [key,value] of Object.entries(values))
+            {
+                if(key==="answerOne" || key==="answerTwo")  autonomyScore+=Number(value)
+                else if(key==="answerThree" || key==="answerFour")  innovationScore+=Number(value)
+                else if(key==="answerFive" || key==="answerSix")  achievementScore+=Number(value)
+                else if(key==="answerSeven" || key==="answerEight")  helpingScore+=Number(value)
+                else if(key==="answerNine" || key==="answerTen")  financialScore+=Number(value)
+                else if(key==="answerEleven" || key==="answerTwelve")  stabilityScore+=Number(value)
+            }
+            const file=await db.valueAssesmentTable.create({data:{
+                achievementScore,innovationScore,stabilityScore,helpingScore,autonomyScore,financialScore,
+                userId:user.id
+            }})
+            return file
+       }
+
+        return file
     })
+
+
 })
 
 export type AppRouter=typeof appRouter;

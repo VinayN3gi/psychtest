@@ -2,6 +2,8 @@ import React from 'react'
 import { MaxWidthWrapper } from './MaxWidthWrapper'
 import InterestInventoryTable from './Tables/InterestInventoryTable'
 import PersonalityTraitTable from './Tables/PersonalityTraitTable'
+import SkillAssesmentTable from './Tables/SkillAssesmentTable'
+
 
 const ReportComponent = () => {
   return (
@@ -55,6 +57,13 @@ const ReportComponent = () => {
           <PersonalityTraitTable/>
         </div>
 
+        <div className=' mb-5'>
+          <h2 className=' text-2xl text-blue-500 font-bold mb-5 '>
+              4. Skills Assessment
+          </h2>
+          <SkillAssesmentTable/>
+        </div>
+    
     </div>
   )
 }
