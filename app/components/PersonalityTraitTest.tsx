@@ -17,6 +17,7 @@ import {
 import { Loader2 } from 'lucide-react'
 import { trpc } from '../_trpc/client'
 import { useRouter } from 'next/navigation'
+import ContactInfo from './ContactInfo'
 
 
 
@@ -548,7 +549,7 @@ const PersonalityTraitTest = () => {
         </DialogFooter>
       </DialogContent>
       </Dialog>
-
+      <ContactInfo/>      
     </MaxWidthWrapper>
   )
 }

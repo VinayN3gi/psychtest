@@ -117,7 +117,7 @@ const InterestInventoryTable = () => {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Area type="monotone" dataKey="score" stroke="#8884d8" fill="#8884d8" />
+          <Area type="monotone" dataKey="score" stroke="#ADD8E6" fill="#ADD8E6" />
         </AreaChart>
       </ResponsiveContainer>
         </div> 
@@ -145,7 +145,7 @@ const InterestInventoryTable = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="score" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="score" stroke="#ADD8E6" activeDot={{ r: 8 }} />
           <Line type="monotone" dataKey="averageScore" stroke="#82ca9d" />
         </LineChart>
       </ResponsiveContainer>

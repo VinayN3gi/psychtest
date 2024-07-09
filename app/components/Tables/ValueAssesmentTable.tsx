@@ -24,7 +24,7 @@ interface valuesInterface{
 
 const InterestInventoryTable = () => {
 
-    const {data,isLoading}=trpc.getValueAssesment.useQuery()
+    const {data,isLoading,error}=trpc.getValueAssesment.useQuery()
     
     if(isLoading) return <div className=' justify-center flex items-center'><Loader2 color='blue' className=' h-7 w-7  animate-spin '/></div>
 
@@ -113,7 +113,7 @@ const InterestInventoryTable = () => {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Area type="monotone" dataKey="score" stroke="#8884d8" fill="#8884d8" />
+          <Area type="monotone" dataKey="score" stroke="#ADD8E6" fill="#ADD8E6" />
         </AreaChart>
       </ResponsiveContainer>
         </div> 

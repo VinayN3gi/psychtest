@@ -16,6 +16,7 @@ import { Loader2 } from 'lucide-react'
 import { trpc } from '../_trpc/client'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
+import ContactInfo from './ContactInfo'
 
 
 const ValueAssesment = () => {
@@ -476,6 +477,7 @@ const ValueAssesment = () => {
         </DialogFooter>
       </DialogContent>
       </Dialog>
+      <ContactInfo/>
     </MaxWidthWrapper>
   )
 }

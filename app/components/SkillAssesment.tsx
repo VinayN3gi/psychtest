@@ -16,6 +16,7 @@ import {
 import { Loader2 } from 'lucide-react'
 import { trpc } from '../_trpc/client'
 import { useRouter } from 'next/navigation'
+import ContactInfo from './ContactInfo'
 
 
 const SkillAssesment = () => {
@@ -476,6 +477,7 @@ const SkillAssesment = () => {
         </DialogFooter>
       </DialogContent>
       </Dialog>
+      <ContactInfo/>
     </MaxWidthWrapper>
   )
 }

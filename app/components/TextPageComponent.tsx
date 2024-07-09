@@ -6,7 +6,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Button } from '@/components/ui/button'
 import { trpc } from '../_trpc/client'
 import { useRouter } from 'next/navigation'
-import { Loader2 } from 'lucide-react'
+import { Contact, Loader2 } from 'lucide-react'
 import {
    Dialog,
    DialogClose,
@@ -17,6 +17,7 @@ import {
    DialogTitle,
    DialogTrigger,
 } from "@/components/ui/dialog"
+import ContactInfo from './ContactInfo'
 
 const TextPageComponent = () => {
   const router=useRouter();
@@ -239,7 +240,7 @@ const TextPageComponent = () => {
         <li>
          <div className=' flex flex-row gap-2  font-semibold text-lg text-black'>
             <p>{`Q6) `}</p>
-            <p>How much do you enjoy tasks that involve organizing data or filesents ? </p>
+            <p>How much do you enjoy tasks that involve organizing data or files ? </p>
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
@@ -476,6 +477,7 @@ const TextPageComponent = () => {
       </DialogContent>
       </Dialog>
        
+       <ContactInfo/>
   </MaxWidthWrapper>
   )
 }
