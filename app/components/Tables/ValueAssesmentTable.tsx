@@ -40,8 +40,8 @@ const InterestInventoryTable = () => {
 
 
     const values:valuesInterface[]=[
-        {name:'Autonomy',score:data.autonomyScore * 10,averageScore:45},
-        {name:'Innovation',score:data.innovationScore *10 ,averageScore:35},
+        {name:'Autonomy',score:data.autonomyScore * 10,averageScore:67},
+        {name:'Innovation',score:data.innovationScore *10 ,averageScore:24},
         {name:'Achievement',score:data.achievementScore * 10,averageScore:27},
         {name:'Helping',score:data.helpingScore *10 ,averageScore:34},
         {name:'Stability',score:data.stabilityScore *10 ,averageScore:39},

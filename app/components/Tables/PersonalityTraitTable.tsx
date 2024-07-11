@@ -44,7 +44,7 @@ const InterestInventoryTable = () => {
         {
             name:'Extraversion',
             score:data.extraversionScore * 10,
-            averageScore:40
+            averageScore:32
         },
         {
             name:'Agreeableness',
@@ -54,17 +54,17 @@ const InterestInventoryTable = () => {
         {
             name:'Conscientiousness',
             score:data.conscientiousnessScore * 10,
-            averageScore:45
+            averageScore:37
         },
         {
             name:'Emotional Stability',
             score:data.stabilityScore * 10,
-            averageScore:50
+            averageScore:47
         },
         {
             name:'Openness to Experience',
             score:data.experienceOpennessScore * 10,
-            averageScore:55
+            averageScore:54
         }
     ]
 

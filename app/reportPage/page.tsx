@@ -10,6 +10,7 @@ import ValueAssesmentTable from '../components/Tables/ValueAssesmentTable'
 import ReportComponentPage2 from '../components/ReportComponentPage2'
 import ReportComponentPage3 from '../components/ReportComponentPage3'
 import { Loader2 } from 'lucide-react'
+import Link from 'next/link'
 
 
 const page = () => {
@@ -89,6 +90,14 @@ const page = () => {
          : 'Download Report'
       }
       </Button>
+
+      <div className=' mt-8 font-serif text-xl '>
+        <p>Click to view some <span className=' text-blue-600 font-semibold hover:cursor-pointer hover:underline'>
+          <Link href="/careerPage">
+            career
+          </Link>
+          </span> options </p>
+      </div>
     </MaxWidthWrapper>
   )
 }

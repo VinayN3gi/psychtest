@@ -43,32 +43,32 @@ const InterestInventoryTable = () => {
         {
             name:'Analytical Thinking',
             score:data.analyticalScore * 10,
-            averageScore:40
+            averageScore:32
         },
         {
             name:'Creativity',
             score:data.creativeScore * 10,
-            averageScore:35
+            averageScore:38
         },
         {
             name:'Communnication',
             score:data.communicationScore * 10,
-            averageScore:45
+            averageScore:40
         },
         {
             name:'Technical Skills',
             score:data.technicalScore * 10,
-            averageScore:50
+            averageScore:42
         },
         {
             name:'Teamwork',
             score:data.teamworkScore * 10,
-            averageScore:55
+            averageScore:39
         },
         {
             name:'Leadership',
             score:data.leadershipScore * 10,
-            averageScore:39
+            averageScore:23
         },
     ]
 

@@ -362,6 +362,15 @@ export const appRouter=router({
        }
 
         return file
+    }),
+
+    getDashboardInfo:publicProcedure.query(async()=>{
+        const {getUser}=getKindeServerSession()
+        const user=await getUser()
+        if(!user || !user.id) throw new TRPCError({code:'UNAUTHORIZED',message:'Not logged in'})
+        const file=await db.interestInventoryTable.findFirst({where:{userId:user.id}})
+        if(!file) return null
+        return file
     })
 
 
