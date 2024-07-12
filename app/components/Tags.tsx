@@ -15,21 +15,21 @@ const Tags = ({title,header1,header1Description,header2,header2Description,heade
   return (
     <div className=' mb-5 ml-5'>
         
-        <p className=' mt-2 text-lg text-blue-500'>{title}</p>
-        <ul className=' mt-1 ml-8 list-disc gap-2 font-mono '>
-            <li className=' mt-1'>
+        <p className=' mt-2 text-xl text-blue-500'>{title}</p>
+        <ul className=' mt-1 ml-8 list-disc gap-2 text-xl '>
+            <li className=' mt-1' key={Math.random()}>
                 <span className=' font-bold '>{header1}:</span>
                 {header1Description}
             </li>
 
-            <li className=' mt-1'>
+            <li className=' mt-1' key={Math.random()}>
                 <span className=' font-bold'>{header2}:</span>
                 {header2Description}
             </li>
 
             {
                 header3 && header3Description ? (
-                    <li className=' mt-1'>
+                    <li className=' mt-1' key={Math.random()}>
                         <span className=' font-bold'>{header3}</span>
                         {header3Description}
                     </li>
