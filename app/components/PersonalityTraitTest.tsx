@@ -187,7 +187,7 @@ const PersonalityTraitTest = () => {
         <li>
          <div className=' flex flex-row gap-2  font-semibold text-lg text-black'>
             <p>{`Q4) `}</p>
-            <p>How often do you try to help others even if it's inconvenient for you ? </p>
+            <p>How often do you try to help others even if it&apos;s inconvenient for you ? </p>
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">
@@ -342,7 +342,7 @@ const PersonalityTraitTest = () => {
         <li>
          <div className=' flex flex-row gap-2  font-semibold text-lg text-black'>
             <p>{`Q9) `}</p>
-            <p>Do you often put other's needs before your own ? </p>
+            <p>Do you often put other&apos;s needs before your own ? </p>
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">

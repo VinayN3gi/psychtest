@@ -268,7 +268,7 @@ const ValueAssesment = () => {
         <li>
          <div className=' flex flex-row gap-2  font-semibold text-lg text-black'>
             <p>{`Q7) `}</p>
-            <p>How important is it for you to work in a job that allows you to make a positive impact on other's live ? </p>
+            <p>How important is it for you to work in a job that allows you to make a positive impact on other&apos;s live ? </p>
          </div>
          <RadioGroup className=' flex flex-col ml-6 mt-3 ' color='black' required>
             <div className="flex items-center space-x-2 text-lg">

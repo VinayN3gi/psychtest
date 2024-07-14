@@ -13,7 +13,7 @@ import { Loader2 } from 'lucide-react'
 import Link from 'next/link'
 
 
-const page = () => {
+const Page = () => {
   const [loader,setLoader] = useState(false)
   const reportRefPage1=useRef(null)
   const reportRefPage2=useRef(null)
@@ -102,4 +102,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

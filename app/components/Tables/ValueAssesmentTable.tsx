@@ -78,7 +78,7 @@ const InterestInventoryTable = () => {
                 <TableRow className='bg-blue-100'>
                     <TableCell className="p-2 w-[200px]">Helping score</TableCell>
                     <TableCell className="p-2">{`${data.helpingScore *10}%`}</TableCell>
-                    <TableCell className="p-2">Enjoys contributing to other's well-being and success.</TableCell>
+                    <TableCell className="p-2">Enjoys contributing to other&apos;s well-being and success.</TableCell>
                 </TableRow>
                 <TableRow className='bg-white'>
                     <TableCell className="p-2 w-[200px]">Stability</TableCell>

@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Navbar from './components/Navbar'
 
 
-const page = () => {
+const Page = () => {
   return (
     <>
     <MaxWidthWrapper className=' mb-12 mt-14 sm:mt-30 justify-center items-center flex flex-col text-center'>
@@ -107,4 +107,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
