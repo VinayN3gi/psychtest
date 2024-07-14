@@ -1,19 +1,20 @@
 import React from 'react'
 import { MaxWidthWrapper } from '../components/MaxWidthWrapper'
-import WorkEnv from '../components/WorkEnv'
-import EducationComponent from '../components/EducationComponent'
-import Description from '../components/Description'
-import Pros from '../components/Pros'
-import Cons from '../components/Cons'
-import Tags from '../components/Tags'
-import ResponsibilityListItem from '../components/ResponsibilityListItem'
 import Professor from '../components/careerComponents/Professor'
+import Physics from '../components/careerComponents/Physics'
+import Chemistry from '../components/careerComponents/Chemistry'
+import Maths from '../components/careerComponents/Maths'
+import Core from '../components/careerComponents/Core'
 
 
 const page = () => {
   return (
     <MaxWidthWrapper>
       <Professor/>
+      <Physics/>
+      <Chemistry/>
+      <Maths/>
+      <Core/>
     </MaxWidthWrapper>
   )
 }

@@ -13,10 +13,10 @@ import { MaxWidthWrapper } from '../MaxWidthWrapper'
 
 const Professor = () => {
   return (
-    <div>
-        <h1 className=' font-semibold text-4xl mb-5'>Science and Research</h1>
+    <div className=' mb-10'>
+        <h1 className=' font-semibold text-5xl mb-5 text-blue-600 text-center'>Science and Research</h1>
         <Description 
-        title='University Professor'
+        title='1) University Professor'
         description='A university professor is an academic expert who teaches courses, conducts 
         research, and publishes scholarly work within a higher education institution. Professors often 
         specialize in a particular field or discipline and contribute to the academic community 
@@ -66,7 +66,6 @@ const Professor = () => {
                 doctoral='Often required,involving further research and academic training.'  
             />
 
-        <div className=' border-b-2 border-gray-600/40 mt-4'/>
 
         <Pros
               prosHeader1='Intellectiual Freedom'
@@ -116,7 +115,7 @@ const Professor = () => {
         />
 
 
-<Tags
+        <Tags
             title='Skills Assessment'
             header1='Analytical Skills'
             header1Description='Strong ability to analyze complex scientific data, solve problems, and conduct research.'
@@ -140,6 +139,7 @@ const Professor = () => {
             pursuing innovative research projects.'
             />
         
+        <div className=' border-b-2 border-gray-600/40 mt-4'/>
 
     </div>
 

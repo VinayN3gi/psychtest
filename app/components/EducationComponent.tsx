@@ -23,7 +23,7 @@ const EducationComponent = ({underGraduation,postGraduation,doctoral}:EducationC
             </li>
 
             <li className=' mt-1' key={Math.random() * 100000}>
-                <span className=' font-bold'>Postdoctoral Experience : </span>
+                <span className=' font-bold'>Specialization : </span>
                 {doctoral}
             </li>
 

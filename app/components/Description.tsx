@@ -10,7 +10,7 @@ const Description = ({title,description}:DescriptionProps) => {
 
   return (
     <div>
-        <h2 className=' font-bold text-xl'>{`1.${title}`}</h2>
+        <h2 className=' font-bold text-3xl mt-2'>{`${title}`}</h2>
         <p className=' mt-5 text-lg'>
         <span className=' font-bold text-xl'>Description : </span>
         <span className='text-xl'>
