@@ -10,7 +10,8 @@ const Provider = ({children}:{children:ReactNode}) => {
     const [trpcClient] = useState(()=>trpc.createClient({
       links:[
         httpBatchLink({
-          url:'http://localhost:3000/api/trpc'
+          url:'https://acadmate-indol.vercel.app/api/trpc'
+         // url:'http://localhost:3000/api/trpc'
         
         })
       ]
