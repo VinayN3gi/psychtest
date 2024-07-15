@@ -3,6 +3,7 @@ import React, { ReactNode, useState } from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query' // Import the QueryClient class
 import { trpc } from '../_trpc/client'
 import { httpBatchLink } from '@trpc/client'
+import { absoluteUrl } from '@/lib/utils'
 
 
 const Provider = ({children}:{children:ReactNode}) => {
@@ -10,7 +11,7 @@ const Provider = ({children}:{children:ReactNode}) => {
     const [trpcClient] = useState(()=>trpc.createClient({
       links:[
         httpBatchLink({
-          url:'https://acadmate-indol.vercel.app/api/trpc'
+          url:absoluteUrl('/api/trpc')
          // url:'http://localhost:3000/api/trpc'
         
         })
