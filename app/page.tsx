@@ -39,7 +39,7 @@ const Page = () => {
         <div className=' mx-auto max-w-6xl px-6 lg:px-8'> 
                 <div className=' mt-16 flow-root sm:mt-24'>
                      <div className= ' ring-gray-900/10 -m-2 rounded-lg bg-gray-900/5 p-2 ring-1 ring-inset  lg:-m-4 lg:rounded-2xl lg:p-4'>
-                        <Image src="" alt="Dashboard image" width="1364" height="866"
+                        <Image src="/image4.png" alt="Dashboard image" width="1080" height="1000"
                         className='rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10 lg:p-24 xl:p-32'
                         
                         />
